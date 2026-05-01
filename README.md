@@ -45,6 +45,12 @@ The goal is to identify patterns related to crime, income, poverty, school safet
 - Riverdale, Fuller Park, Englewood, North Lawndale, and East Garfield Park had the highest poverty percentages.
 - Crimes recorded at schools included battery, criminal damage, narcotics, assault, criminal trespass, and public peace violation.
 
+## Project Status
+
+This project is a completed exploratory analysis focused on identifying key patterns and relationships between crime and socioeconomic factors.
+
+Further improvements may include additional visualizations and deeper statistical analysis.
+
 ## Sample SQL Query
 
 ```sql
