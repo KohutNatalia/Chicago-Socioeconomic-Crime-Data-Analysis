@@ -38,7 +38,6 @@ The goal is to identify patterns related to crime, income, poverty, school safet
 - Subqueries
 
 ## Main Insights
-- The crime table contains 533 recorded crimes.
 - Community area 25 had the highest number of recorded crimes.
 - Austin was the community area with the highest number of crimes.
 - Riverdale had the highest hardship index.
@@ -51,6 +50,19 @@ This project is a completed exploratory analysis focused on identifying key patt
 
 Further improvements may include additional visualizations and deeper statistical analysis.
 
+## Analysis Preview
+
+### Top Areas by Poverty
+![Poverty](screenshots/top poverty areas.jpg)
+
+### Most Crime-Prone Area
+![Crime](screenshots/most crime prone area.jpg)
+
+### Highest Hardship Index
+![Hardship](screenshots/hardship index max.jpg)
+
+### Low Income Areas
+![Income](screenshots/low_income_areas.png)
 ## Sample SQL Query
 
 ```sql
