@@ -1,77 +1,56 @@
-# Chicago-Socioeconomic-Crime-Data-Analysis
-Analyzed Chicago socioeconomic, public schools, and crime datasets using SQL and Python.  The project explores crime patterns, income levels, poverty rates, school safety scores, and community hardship indicators.  Used SQL queries with filtering, grouping, aggregation, ordering, and subqueries to extract insights from relational data.
+# Chicago Socioeconomic Crime Data Analysis
 
 ## Project Overview
-This project analyzes Chicago crime, census, and public school data using SQL.  
-The goal is to identify patterns related to crime, income, poverty, school safety, and community hardship.
+This project analyzes the relationship between socioeconomic factors and crime in Chicago using SQL and Python.
 
-## Tools Used
-- SQL
-- SQLite
-- Python
+The goal was to identify patterns between income levels, poverty, hardship index, and crime distribution across different community areas.
+
+---
+
+## Tools & Technologies
+- SQL (data extraction, filtering, aggregation)
+- Python (data analysis)
 - Pandas
-- Jupyter Notebook
+- Data visualization
 
-## Datasets
-- Chicago Crime Data
-- Chicago Census Data
-- Chicago Public Schools Data
+---
 
-## Key Questions Answered
-- How many crimes were recorded in the crime table?
-- Which community areas have per capita income below $11,000?
-- Which crimes involved minors or children?
-- What types of crimes were recorded at schools?
-- Which community areas have the highest poverty rates?
-- Which community area is the most crime-prone?
-- Which community area has the highest hardship index?
-- What is the name of the community area with the highest number of crimes?
+## Key Insights
+- Higher poverty areas tend to have higher crime rates
+- Certain community areas show consistently higher hardship index
+- Crime types vary depending on location (e.g., schools vs residential areas)
 
-## Key SQL Skills Demonstrated
-- SELECT statements
-- WHERE filtering
-- LIKE operator
-- Aggregate functions: COUNT(), AVG(), MAX()
-- GROUP BY
-- ORDER BY
-- LIMIT
-- Subqueries
+---
 
-## Main Insights
-- Community area 25 had the highest number of recorded crimes.
-- Austin was the community area with the highest number of crimes.
-- Riverdale had the highest hardship index.
-- Riverdale, Fuller Park, Englewood, North Lawndale, and East Garfield Park had the highest poverty percentages.
-- Crimes recorded at schools included battery, criminal damage, narcotics, assault, criminal trespass, and public peace violation.
+## Analysis Results
 
-## Project Status
+### Crimes at Schools
+![Crimes](Crimes-at-schools.jpg)
 
-This project is a completed exploratory analysis focused on identifying key patterns and relationships between crime and socioeconomic factors.
+---
 
-Further improvements may include additional visualizations and deeper statistical analysis.
+### Most Crime-Prone Areas
+![Crime Areas](Most-crime-prone-area.jpg)
 
-## Analysis Preview
-
-### Top Areas by Poverty
-![Poverty](screenshots/top poverty areas.jpg)
-
-### Most Crime-Prone Area
-![Crime](screenshots/most crime prone area.jpg)
+---
 
 ### Highest Hardship Index
-![Hardship](screenshots/hardship index max.jpg)
+![Hardship](Hardship-index-max.jpg)
 
-### Low Income Areas
-![Income](screenshots/low_income_areas.png)
-## Sample SQL Query
+---
 
+### Poverty vs Income
+![Income](Poverty-income.jpg)
+
+---
+
+### Top Poverty Areas
+![Poverty](Top-poverty-areas.jpg)
+
+---
+
+## SQL Example
 ```sql
-SELECT COMMUNITY_AREA_NAME
-FROM CENSUS_DATA
-WHERE community_area_number = (
-    SELECT community_area_number
-    FROM CHICAGO_CRIME_DATA
-    GROUP BY community_area_number
-    ORDER BY COUNT(*) DESC
-    LIMIT 1
-);
+SELECT DISTINCT PRIMARY_TYPE
+FROM CHICAGO_CRIME_DATA
+WHERE location_description LIKE '%SCHOOL%';
